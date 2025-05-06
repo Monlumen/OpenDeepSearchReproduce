@@ -27,7 +27,7 @@ from smolagents import (
     ToolCallingAgent,
 )
 from smolagents.agents import ActionStep
-from eval_hyperparameters import base_model, testset_name, n_threads
+from eval_hyperparameters import base_model, testset_name, n_threads, n_trials
 
 
 load_dotenv()
@@ -85,7 +85,7 @@ def parse_arguments():
     parser.add_argument(
         "--num-trials",
         type=int,
-        default=1,
+        default=n_trials,
         help="Number of trials to run for each evaluation",
     )
     return parser.parse_args()
@@ -175,6 +175,8 @@ def answer_single_question(example, model, answers_file, action_type, search_mod
                 json.dump(results, f)
         print("Error on ", augmented_question, e)
         intermediate_steps = []
+        answer = "Error happened when running"
+        token_count = 0
     end_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     annotated_example = {
         "model_id": model.model_id,

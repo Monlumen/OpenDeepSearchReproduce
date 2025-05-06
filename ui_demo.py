@@ -47,7 +47,7 @@ with gr.Blocks() as demo:
                 if mode == "Snap":
                     text = "OpenSearchTool + CodeAct + Gemini2-Flash"
                 elif mode == "Pro":
-                    text = "OpenSearchTool(Pro Mode) + CodeAct + Gemini2.5-Flash"
+                    text = "OpenSearchTool(Pro Mode) + CodeAct + Gemini2-Flash"
                 else:
                     text = "OpenSearchTool(Pro Mode) + CodeAct + Deepseek-R1" + "\n(It might take several minutes)"
                 gr.Text(text, label="")
@@ -91,7 +91,7 @@ with gr.Blocks() as demo:
             model = "openrouter/google/gemini-2.0-flash-001"
             pro_mode = False
         elif mode == "Pro":
-            model = "openrouter/google/gemini-2.5-flash-preview"
+            model = "openrouter/google/gemini-2.0-flash-001"
             pro_mode = True
         else:
             model = "openrouter/deepseek/deepseek-r1"

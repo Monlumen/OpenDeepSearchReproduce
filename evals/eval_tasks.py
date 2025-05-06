@@ -72,7 +72,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     base_model_name = base_model.replace("/", "__")
-    df_path = "./output/" + base_model_name + f"/codeact/frames_{testset_name}_set/" + base_model_name + f"__codeact__frames_{testset_name}_set__trial0.jsonl"
+    df_path = "./output/" + base_model_name + f"/codeact/frames_{testset_name}_set/" + base_model_name + f"__codeact__frames_{testset_name}_set__trial2.jsonl"
     import os
     print(os.path.exists(df_path))
     autograde_df(df_path, args.num_cpus)
